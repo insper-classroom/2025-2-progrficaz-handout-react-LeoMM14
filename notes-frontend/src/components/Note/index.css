@@ -8,6 +8,7 @@
     flex-direction: column;
     align-content: space-between;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: relative; /* necessário para posicionar o botão de lixeira */
   }
 
 .card-title{
@@ -25,4 +26,39 @@
     align-items: center;
     height: 100%;
     padding-top: 10px;
+}
+
+/* Estilos do botão de lixeira (visual apenas) */
+.note-trash{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: transparent;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+    color: #6b6b6b; /* ícone em cinza */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: transform 120ms ease, color 120ms ease, background-color 120ms ease;
+}
+
+.note-trash svg{
+    width: 18px;
+    height: 18px;
+    fill: currentColor; /* usa a cor do botão */
+    display: block;
+}
+
+.note-trash:hover{
+    transform: translateY(-1px);
+    color: #d32f2f; /* vermelho suave ao passar o mouse */
+    background-color: rgba(0,0,0,0.03);
+}
+
+.note-trash:focus{
+    outline: 2px solid #90caf9; /* foco acessível */
+    outline-offset: 2px;
 }
